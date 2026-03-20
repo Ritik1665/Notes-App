@@ -1,0 +1,87 @@
+/* src/styles.css - Global styles & CSS variable theming */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+/* ─── CSS Variables (Light theme default) ─────────────────────────────────── */
+:root,
+[data-theme="light"] {
+  --bg:             #f7f6f3;
+  --surface:        #ffffff;
+  --surface-raised: #f3f2ee;
+  --surface-hover:  #eceae4;
+  --surface-hover2: #e5e3dc;
+  --border:         #e8e6e0;
+
+  --text:           #1a1917;
+  --text-muted:     #6b6860;
+  --text-subtle:    #9d9b96;
+
+  --accent:         #2563eb;
+  --accent-hover:   #1d4ed8;
+  --accent-dim:     #93c5fd;
+  --accent-bg:      #eff6ff;
+  --accent-bg-hover:#dbeafe;
+  --accent-glow:    rgba(37, 99, 235, 0.12);
+
+  --highlight-bg:   #fef08a;
+  --highlight-text: #713f12;
+
+  --shadow:         rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] {
+  --bg:             #0f0e0d;
+  --surface:        #1a1917;
+  --surface-raised: #222120;
+  --surface-hover:  #2a2926;
+  --surface-hover2: #333230;
+  --border:         #2e2d2b;
+
+  --text:           #f0ede8;
+  --text-muted:     #928f89;
+  --text-subtle:    #5c5a56;
+
+  --accent:         #60a5fa;
+  --accent-hover:   #93c5fd;
+  --accent-dim:     #1e40af;
+  --accent-bg:      rgba(96, 165, 250, 0.1);
+  --accent-bg-hover:rgba(96, 165, 250, 0.18);
+  --accent-glow:    rgba(96, 165, 250, 0.15);
+
+  --highlight-bg:   rgba(250, 204, 21, 0.2);
+  --highlight-text: #fbbf24;
+
+  --shadow:         rgba(0,0,0,0.4);
+}
+
+/* ─── Reset & Base ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Highlight mark ──────────────────────────────────────────────────────── */
+mark.highlight {
+  background: var(--highlight-bg);
+  color: var(--highlight-text);
+  border-radius: 3px;
+  padding: 0 2px;
+  font-weight: 600;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-subtle); }
