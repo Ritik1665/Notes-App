@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { Note, NoteCreate, NoteUpdate, PaginatedNotes, SearchResponse } from '../models/note.model';
 
-const API = 'http://localhost:8000';
+const API = 'https://notes-app-2-9hsg.onrender.com/';
 
 @Injectable({ providedIn: 'root' })
 export class NotesService {
